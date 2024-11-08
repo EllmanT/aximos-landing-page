@@ -4,15 +4,5 @@ import react from '@vitejs/plugin-react';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  optimizeDeps: {
-    include: ['react-countup'],
-  },
-  ssr: {
-    external: ['react-countup'],
-  },
-  build: {
-    rollupOptions: {
-      external: ['react-countup']
-    }
-  }
+
 });
