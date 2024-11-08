@@ -2,7 +2,7 @@ import { Element } from "react-scroll";
 import { useState } from "react";
 import clsx from "clsx";
 // import CountUp from "react-countup";
-import CountUp from 'https://cdn.skypack.dev/react-countup';
+// import CountUp from 'https://cdn.skypack.dev/react-countup';
 import { plans } from "../constants/index.jsx";
 import Button from "../components/Button.jsx";
 
@@ -107,14 +107,14 @@ const Pricing = () => {
                         index === 1 ? "text-yellow-500" : "text-p4"
                       )}
                     >
-                      $
-                      <CountUp
+                      $100
+                      {/* <CountUp
                         start={plan.priceMonthly}
                         end={monthly ? plan.priceMonthly : plan.priceYearly}
                         duration={0.4}
                         useEasing={false}
                         preserveValue
-                      />
+                      /> */}
                     </div>
                     <div className="small-1 relative top-3 ml-1 uppercase text-p5">
                       /mo
