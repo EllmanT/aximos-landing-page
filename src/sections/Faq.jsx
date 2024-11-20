@@ -12,8 +12,8 @@ const Faq = () => {
 
             
     <div>
-        <h3 className='h3 max-md:h5 max-w-640 max-lg:max-w-md mb-7 text-gray-700'>
-            Curiosity gets you answers
+        <h3 className='h3 max-md:h5 max-w-640 max-lg:max-w-md mb-7 text-gray-700 '>
+            Need guidance
         </h3>
         <p className='body-1 max-lg:max-w-sm'>
             Answers to your faqs

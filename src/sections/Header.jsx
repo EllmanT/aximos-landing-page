@@ -22,11 +22,15 @@ const Header = () => {
     <LinkScroll
       onClick={() => setIsOpen(false)}
       to={title}
-      offset={-100}
+      offset={
+        title === 'features' ? -150 :
+        title === 'pricing' ? -30 :   
+        -100
+      }
       spy
       smooth
       activeClass="nav-active"
-      className={clsx("base-bold   uppercase transition-colors duration-500 cursor-pointer hover:text-red-600 max-lg:my-4 max-lg:h-5", hasScrolled ? "text-gray-100":"text-gray-700")}
+      className={clsx("base-bold   uppercase transition-colors duration-500 cursor-pointer hover:text-red-600 max-lg:my-4 max-lg:h-5", hasScrolled ? "text-gray-400":"text-gray-100")}
     >
       {title}
     </LinkScroll>
@@ -35,11 +39,11 @@ const Header = () => {
   return (
     <header
     className={clsx(
-      "fixed top-0 bg-gray-100 left-0 z-50 w-full py-10   transition-all duration-500 max-lg:py-4",
-      hasScrolled && "py-4 bg-s1 backdrop-blur-[8px]" // Updated background color
+      "fixed top-0 bg-s1 left-0 z-50 w-full py-6   transition-all duration-500 max-lg:py-6",
+      hasScrolled && "py-3 bg-slate-50 backdrop-blur-md" // Updated background color
     )}
   >
-    <div className="container flex h-14 items-center max-lg:px-5">
+    <div className="container flex h-10 items-center max-lg:px-5">
       <a className="lg:hidden flex-1 cursor-pointer z-2">
         <img src="/images/noback.png" width={115} height={55} alt="logo" />
       </a>
@@ -81,7 +85,7 @@ const Header = () => {
               <li className="nav-li">
                 <NavLink title="faq" />
                 <div className="dot" />
-                <NavLink title="download" />
+                <NavLink title="testimonials" />
               </li>
             </ul>
           </nav>

@@ -5,10 +5,10 @@ import { details, features } from "../constants";
 
 const Features = () => {
   return (
-    <section>
-      <Element name="features">
-        <div className="container  ">
-        <div className="h-[80vh] relative flex md:flex-wrap flex-nowrap border-2 border-s3 rounded-7xl md:overflow-hidden max-md:flex-col feature-after md:g14 max-md:border-none max-md:rounded-none max-md:gap-2">
+    <section >
+      <Element name="features" >
+        <div className="container ">
+        <div className="h-[72vh] mt-10 relative flex md:flex-wrap flex-nowrap border-2 border-s3 rounded-7xl md:overflow-hidden max-md:flex-col feature-after md:g14 max-md:border-none max-md:rounded-none max-md:gap-2">
   {features.map(({ id, icon, caption, title, text, button }) => (
     <div
       key={id}
@@ -17,7 +17,7 @@ const Features = () => {
       <div className="w-full flex justify-start items-start">
         <div className="-ml-2 mb-8 flex items-center justify-center flex-col">
           <div className="w-0.5 h-6 bg-s3" />
-          <img src={icon} className="w-6 md:w-7 h-auto object-contain" alt={title} />
+          <img src={icon} className=" size-12 object-contain" alt={title} />
         </div>
       </div>
 
@@ -28,9 +28,9 @@ const Features = () => {
       <p className="mb-6 body-1 text-xs max-md:mb-4 max-md:body-3 text-p5">
         {text}
       </p>
-      <Button icon={button.icon} className="text-xs md:text-sm">
+      {/* <Button icon={button.icon} className="text-xs md:text-sm">
         {button.title}
-      </Button>
+      </Button> */}
     </div>
   ))}
 
@@ -39,12 +39,12 @@ const Features = () => {
     {details.map(({ id, icon, title }) => (
       <li key={id} className="relative pt-8 px-2 pb-10">
         <div className="absolute top-6 bottom-0 left-1/2 bg-s3/20 w-[1px] h-full z-10" />
-        <div className="flex items-center justify-center mx-auto mb-2 border-2 border-s2 rounded-full hover:border-s4 transition-all duration-500 shadow-500 w-8 h-8">
+        <div className="flex items-center justify-center mx-auto mb-2 border-2 border-s2 rounded-full hover:border-s4 transition-all duration-500 shadow-500 size-12">
           <img
             src={icon}
             alt={title}
-            className="w-4 h-4 object-contain z-20"
-          />
+            className="size-17/20 object-contain z-20 animate-pulse"
+            />
         </div>
         <h3 className="relative z-2 max-w-36 mx-auto my-0 base-small text-center text-p5 uppercase text-xs">
           {title}

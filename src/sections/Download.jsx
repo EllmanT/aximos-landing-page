@@ -5,15 +5,15 @@ import { Element } from "react-scroll";
 
 const Download = () => {
   return (
-    <section>
+    <section className=" max-width: 1280px">
       <Element
-        name="download"
+        name="testimonials"
         className="g-7 relative pb-32 pt-24 max-lg:pb-24 max-md:py-16"
       >
         <div className="container">
           <div className="flex items-center">
             <div className="relative mr-6 flex-540 max-xl:flex-280 max-lg:flex-256 max-md:flex-100">
-              <div className="mb-10">
+              <div className="mb-10 ">
                 <img
                   src="/images/aximos-full.png"
                   width={160}
@@ -21,24 +21,25 @@ const Download = () => {
                   alt="xora"
                 />
               </div>
-              <p className="body-1 mb-10 max-w-md">
-              Trusted by many...
-              </p>
+              <h3 className='h3 max-md:h5 max-w-640 max-lg:max-w-md mb-7 text-gray-700 '>
+            Testimonials
+        </h3>
               <ul className="flex flex-wrap items-center gap-6">
-              {logos.map(({id,url,width, height,title})=>(
-                        <li key={id} className="mx-10 mt-0">
-                            <img
-                            src={url}
-                            width={width}
-                            height={height}
-                            alt={title}
-                            />
-                            
-                        </li>
-                    ))}
+              {logos.map(({ id, url, width, height, title }) => (
+  <li key={id} className="mx-10 mt-0">
+    <img
+      src={url}
+      width={width}
+      height={height}
+      alt={title}
+      className="rounded-half shadow-2xl" // Apply rounded-full for a circular shape and shadow-xl for a shadow effect
+    />
+  </li>
+))}
+
               </ul>
             </div>
-            <div className="mb-10 max-md:hidden">
+            <div className="mb-10 max-md:hidden shadow-2xl  rounded-40">
               <div className="download_preview-before download_preview-after rounded-40 relative w-[935px] border-2 border-s5 p-6">
                 <div className="relative rounded-3xl bg-s1 px-6 pb-6 pt-14">
                   <span className="donwload_preview-dot left-6 bg-p2"/>

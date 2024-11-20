@@ -1,7 +1,7 @@
 import { Element } from "react-scroll";
 import { useState } from "react";
 import clsx from "clsx";
-// import CountUp from "react-countup";
+import CountUp from "react-countup";
 // import CountUp from 'https://cdn.skypack.dev/react-countup';
 import { plans } from "../constants/index.jsx";
 import Button from "../components/Button.jsx";
@@ -107,7 +107,7 @@ const Pricing = () => {
                         index === 1 ? "text-yellow-500" : "text-p4"
                       )}
                     >
-                      $100
+                     $30
                       {/* <CountUp
                         start={plan.priceMonthly}
                         end={monthly ? plan.priceMonthly : plan.priceYearly}
@@ -117,7 +117,7 @@ const Pricing = () => {
                       /> */}
                     </div>
                     <div className="small-1 relative top-3 ml-1 uppercase text-p5">
-                      /mo
+                      /mo per user
                     </div>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ const Pricing = () => {
                     
                     
                     <Button icon={plan.icon} markerFill={index ===1 && '#FFD700'}>
-                      Get Started
+                      Get Started for free
                     </Button>
 
                 </div>

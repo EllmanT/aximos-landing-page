@@ -189,7 +189,7 @@
   /* END of Gradients */
   /* START of Common */
   .container {
-    @apply mx-auto max-w-[1252px] px-16  max-xl:px-10 max-lg:px-6 max-sm:px-4;
+    @apply mx-auto max-w-[1252px] px-16 w-full max-xl:px-10 max-lg:px-6 max-sm:px-4;
   }
   .text-e5383b {
     color: #e5383b; /* Define your custom text color */
@@ -234,9 +234,119 @@
 
   /* END of Header */
   /* START of Hero */
-  .hero-img_res {
-    @apply max-lg:-top-40 max-lg:left-[calc(50%-280px)] max-lg:w-[1160px] max-md:bottom-[-590px] max-md:left-[calc(50%-390px)] max-md:top-auto;
+  .caption {
+    display: inline-block;
+    overflow: hidden; /* Optional, to hide any overflow */
+    white-space: nowrap; /* Prevents text from wrapping */
   }
+  
+  .char {
+    opacity: 0; /* Start hidden */
+    animation: appear 0.5s forwards;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(10px); /* Optional: slight slide-up effect */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+/* Fade-in/out animation for title */
+.fade-in-out {
+  opacity: 0; /* Start as invisible */
+  transition: opacity 2s ease-in-out; /* Adjust the duration for fade-in/out speed */
+}
+
+.fade-in-out.active {
+  opacity: 1; /* Fully visible when active */
+}
+
+/* Optional: Additional styles for the .fade-in-out class */
+.fade-in-out {
+  transform: translateY(10px); /* Adds a subtle upward transition effect */
+}
+
+.fade-in-out.active {
+  transform: translateY(0); /* Reset position on fade-in */
+}
+
+  /* Start of the bouncing image */
+
+  .hero-fall-in {
+    opacity: 0;
+    animation: fallInBounce 2s ease-in-out forwards;
+  }
+  
+  @keyframes fallInBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-100vh); /* Start from directly above the screen */
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(60px); /* First large bounce below the final position */
+    }
+    60% {
+      transform: translateY(-40px); /* Bounce up a bit */
+    }
+    70% {
+      transform: translateY(30px); /* Second smaller bounce */
+    }
+    80% {
+      transform: translateY(-20px); /* Bounce up even more slightly */
+    }
+    90% {
+      transform: translateY(10px); /* Final, tiny bounce before settling */
+    }
+    100% {
+      transform: translateY(0); /* Settles in the original position */
+      opacity: 1; /* Ensure it stays visible */
+    }
+  }
+  
+  
+  
+  
+  /* End of the bouncing image */
+
+  /* Start Hero grow */
+
+  .hero-grow {
+    animation: growAndShrink 2s ease-in-out 1;
+  }
+  
+  @keyframes growAndShrink {
+    0%, 100% {
+      transform: scale(1); /* Starts and ends at original size */
+    }
+    50% {
+      transform: scale(1.2); /* Grows to 1.2 times the original size */
+    }
+  }
+/* Adjust the hero section container to use flexbox for centering */
+.swiper-slide .hero-img_res {
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  height: 425px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* Optionally, add hover effect for the image to make it more interactive */
+.hero-img_res:hover {
+  transform: scale(1.05) translateY(-50%); /* Slight zoom-in effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
 
   /* END of Hero */
   /*START of Custom Button*/
@@ -370,6 +480,35 @@
   @apply flex size-10 items-center justify-center rounded-full border-2 border-gray-500/25 bg-s2 transition-all duration-500 hover:border-red-700;
 }
 
+.footer{
+  @apply w-full   border-x-black-100;
+}
 /* END of Footer */
+
+/* START of Contact form */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at the same position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up slightly */
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite; /* Smooth, looping animation */
+}
+.animate-pulse{
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+/* End of Contact form */
 
 }
