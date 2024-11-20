@@ -1,7 +1,7 @@
 import { Element } from "react-scroll";
 import { useState } from "react";
 import clsx from "clsx";
-import CountUp from "react-countup";
+//import CountUp from "react-countup";
 // import CountUp from 'https://cdn.skypack.dev/react-countup';
 import { plans } from "../constants/index.jsx";
 import Button from "../components/Button.jsx";
